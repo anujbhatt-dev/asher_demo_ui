@@ -1,15 +1,7 @@
 import React, {Component} from "react"
 import {Switch , Route} from "react-router-dom"
-//fixed
-import GoToTop from "./fixed/gototop"
-import Navigation from "./fixed/navigation"
-import NavigationMob from "./fixed/navigationMob"
-
 
 import Landing from "./landing/landing"
-import About from "./about/about"
-import Contact from "./contact/contact"
-
 
 
 class Layout extends Component{
@@ -33,17 +25,9 @@ class Layout extends Component{
 
       return (
           <div classname="layout">
-              {this.state.mobile?<NavigationMob/>:<Navigation/>}
-              <GoToTop/>
               <Switch>
                    <Route path='/' exact>
                        <Landing/>
-                   </Route>
-                   <Route path='/about' exact>
-                       <About/>
-                   </Route>
-                   <Route path='/contact' exact>
-                       <Contact/>
                    </Route>
               </Switch>
           </div>

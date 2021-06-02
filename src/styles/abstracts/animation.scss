@@ -1,0 +1,11 @@
+@keyframes glow {
+  0%{
+    opacity: .8;
+    transform: translateY(-50%) scale(1);
+  }
+  100%{
+    opacity: 0;
+    transform: translateY(-50%) scale(1.5);
+  }
+
+}

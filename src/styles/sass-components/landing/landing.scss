@@ -1,0 +1,243 @@
+.landing{
+  color: $color-white;
+  display:flex;
+  // justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  &__backgroundImg{
+    position: absolute;
+    width: 100vw;
+    object-fit:cover;
+    object-position: center;
+    height: 60vh;
+    clip-path: polygon(0 0, 100% 0, 100% 59%, 0% 100%);
+    z-index: -1;
+  }
+  &__socialMedia{
+    display:flex;
+    box-shadow: 0 18px 45px 0 rgba(0,0, 0 ,.13);
+    align-items: center;
+    flex-direction: column;
+     background: #333;
+     background: linear-gradient(0deg, rgba(51,51,51,1) 0%, rgba(51,51,51,1) 85%, rgba(0,212,255,0) 85%);
+     width: 65%;
+     margin-top: 18rem;
+     @include respond(tab-land){
+       background: linear-gradient(0deg, #1a1a1a 0%, #1a1a1a 85%, rgba(0,212,255,0) 85%);
+       width: 100%;
+     }
+     &_asherImg{
+       height: 22rem;
+       width: 22rem;
+     }
+     &_asher{
+       font-size: 2.8rem;
+       font-weight: 500;
+       letter-spacing: .7rem;
+       text-align: center;
+       margin: 1.5rem 0;
+     }
+     &_location{
+       font-size: 1.6rem;
+       font-weight: 300;
+       text-align: center;
+       margin-bottom: 2rem;
+       color: #929292;
+       display: flex;
+       align-items: center;
+       & i{
+         font-size:2.5rem;
+         margin-right: 1rem;
+       }
+     }
+     &_occupation{
+       font-size: 1.4rem;
+       font-weight: 300;
+       text-align: center;
+       margin-bottom: 1rem;
+       color: $color-white;
+     }
+     &_items{
+       display: flex;
+       justify-content:center;
+       align-items: center;
+       flex-wrap: wrap;
+       margin: 0 5rem;
+     }
+     &_link{
+       color: #fff;
+       border-radius: 100px;
+       font-size:1.8rem;
+       padding: .3rem;
+       margin: .8rem;
+       border: 1px solid #929292;
+       text-decoration:none;
+       transition: all .3s;
+       &:hover{
+         border: 1px solid $color-white;
+       }
+       & i{
+         height: 3.5rem;
+         width: 3.5rem;
+         display: flex;
+         justify-content:center;
+         align-items: center;
+       }
+     }
+     padding-bottom: 3rem;
+  }
+
+  &__grid{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(4, 1fr);
+    grid-gap: 1.5rem 2rem;
+    width: 65%;
+    margin: 5rem 0;
+    @include respond(tab-land){
+      width: 95%;
+      margin:0;
+      grid-template-columns: 1fr;
+    }
+    &_item{
+      cursor: pointer;
+      box-shadow: 0 0px 4rem rgba(0,0, 0 ,.13);
+      display: flex;
+      justify-content: center;
+      flex-direction:column;
+      height: 8rem;
+      background: #333;
+      background: linear-gradient(-90deg, rgba(51,51,51,1) 0%, rgba(51,51,51,1) 97%, rgba(0,212,255,0) 97%);
+      color: $color-white;
+      font-size: 1.6rem;
+      padding-left: 10rem;
+      position: relative;
+      text-decoration: none;
+      &-box{
+        height: 6.5rem;
+        width: 6.5rem;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%) scaleX(1);
+        left: 0;
+        background: $color-white;
+        animation: glow 1.5s ease-out infinite;
+        color: transparent;
+        filter: blur(1px);
+      }
+      & img{
+        height: 6.5rem;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        left: 0;
+        transition: all .3s ;
+      }
+      &-title{
+          margin-bottom: .5rem;
+      }
+      &-subtitle{
+          color: #929292;
+          font-size: 1.4rem;
+      }
+      & i{
+        position: absolute;
+        right: 3rem;
+        top: 50%;
+        font-size: 2rem;
+        font-weight: lighter;
+        transform: translateX(-50%) translateY(-50%);
+        color: #929292;
+        transition: all .3s ;
+      }
+    }
+    &_item--1{
+      grid-area: 1/1/2/3;
+      background: linear-gradient(-90deg, rgba(51,51,51,1) 0%, rgba(51,51,51,1) 99%, rgba(0,212,255,0) 99%);
+      & .landing__grid_item-box{
+        background: orangered;
+      }
+      @include respond(tab-land){
+        grid-area: auto;
+      }
+    }
+    &_item--2{
+      & .landing__grid_item-box{
+        background:  #04AA6D;
+      }
+    }
+    &_item--3, &_item--5{
+      & img{
+        background: #3673fc;
+        color: $color-white;
+      }
+      & .landing__grid_item-box{
+        background: #3673fc;
+      }
+    }
+    &_item--4{
+      & .landing__grid_item-box{
+        background: yellow;
+      }
+    }
+    &_item--6{
+      & .landing__grid_item-box{
+        background: white;
+      }
+    }
+    &_item--7{
+      & .landing__grid_item-box{
+        background:  magenta;
+      }
+    }
+  }
+
+  &__footer{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 2rem ;
+    font-size: 1.2rem;
+    color: #929292;
+    width: 65%;
+    @include respond(tab-land){
+      width: 95%;
+    }
+    &_branding{
+      display:flex;
+      cursor: pointer;
+      align-items: center;
+      transition: all .3s;
+      &:hover{
+        color:$color-white;
+      }
+      & img{
+        width: 3rem;
+        margin-right: 1rem;
+      }
+      & span{
+
+      }
+    }
+    &_create{
+      transition: all .3s;
+      cursor: pointer;
+      &:hover{
+        color:$color-white;
+      }
+    }
+  }
+}
+
+
+
+
+.landing__grid_item:hover > i{
+  transform: translateX(30%) translateY(-50%);
+}
+.landing__grid_item:hover > img{
+  transform: translateY(-60%);
+}
+.landing__grid_item:hover > .landing__grid_item-box{
+     transform: translateY(-60%) scaleX(1);
+}
